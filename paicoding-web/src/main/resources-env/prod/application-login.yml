@@ -13,4 +13,4 @@ paicoding:
       appSecret: 公众号
       qrCodeImg: ${view.site.contactMeWxQrCode}
       qrCodeLogo: ${view.site.websiteLogoUrl}
-      securityCheckToken:  # 为空，表示不对微信回调的接口进行校验
+      securityCheckToken: # 为空，表示不对微信回调的接口进行校验
