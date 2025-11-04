@@ -18,3 +18,4 @@ spring:
         - classpath:/static/                 # 项目内置静态资源目录（如src/main/resources/static）
         - file:///d:${image.abs-tmp-path}    # Windows系统下的本地图片存储路径（d盘）
         - file:${image.abs-tmp-path}         # Linux/macOS系统下的本地图片存储路径
+
