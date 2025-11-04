@@ -3,6 +3,12 @@ image:
   web-img-path: /forum/image/  # 前端访问图片的URL路径前缀（浏览器访问时的路径）
   tmp-upload-path: /tmp/forum/ # 图片上传过程中的临时存放路径（上传未完成时的过渡目录）
   cdn-host:                    # CDN域名（为空表示暂不使用CDN加速）
+  oss:                         # 对象存储服务（OSS）配置（如阿里云OSS、AWS S3等）
+    type: local                # 存储类型：local表示使用本地文件系统存储（而非云OSS）
+    prefix: paicoding/         # 存储文件的前缀路径（类似文件夹，用于分类存储）
+    endpoint: oss-cn-hangzhou.aliyuncs.com                  # 云OSS的服务地址（如阿里云OSS的endpoint：oss-cn-beijing.aliyuncs.com）
+    bucket: dxg-oss1                   # 云OSS的存储桶名称（Bucket Name）
+    host: https://cdn.tobebetterjavaer.com/  # OSS访问域名（可配合CDN使用）
 
 spring:
   web:
