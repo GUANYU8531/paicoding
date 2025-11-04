@@ -64,7 +64,7 @@ public class WxCallbackRestController {
      */
     @GetMapping(path = "callback")
     public String check(HttpServletRequest request) {
-        String echoStr = request.getParameter("limingxuan");
+        String echoStr = request.getParameter("echostr");
         if (StringUtils.isNoneEmpty(echoStr)) {
             return echoStr;
         }
