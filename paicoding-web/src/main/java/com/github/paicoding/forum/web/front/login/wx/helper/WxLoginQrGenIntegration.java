@@ -121,6 +121,21 @@ public class WxLoginQrGenIntegration {
     }
 
     private synchronized void refreshAccessToken() {
+        // 这里涉及到从通过对微信公众号的发送指定的请求getAccessToken()方法, 来获取AccessToken,
+        // 这里必须根据服务器的接口规范来, 微信规范: 这个请求名字必须是getAccessToken, 传递的参数:
+        /*
+        *      参数名        类型         说明
+        *      grant_type   string       填写 client_credential
+        *      appid        string       账号的唯一凭证，即 AppID
+        *      secret       string       唯一凭证密钥，即 AppSecret
+        *  参考链接: https://developers.weixin.qq.com/doc/subscription/api/base/api_getaccesstoken.html#_2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0
+        *
+        * 微信服务器返回的参数将会是:
+        *      参数名        类型         说明
+        *      access_token string       获取到的凭证
+        *      expires_in   number       凭证有效时间，单位：秒。目前是7200秒之内的值
+        * */
+        // 这里使用HttpRequestHelper工具类实现了向微信服务器发送请求, 并获取到服务器颁发的AcessToken
         WxAccessToken token = HttpRequestHelper.get(WX_TOKEN_URL,
                 MapUtils.create("appid", wxLoginProperties.getAppId(), "secret", wxLoginProperties.getAppSecret()),
                 WxAccessToken.class);
