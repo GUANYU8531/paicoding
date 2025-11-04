@@ -1,0 +1,20 @@
+image:
+  abs-tmp-path: /tmp/storage/  # 图片本地存储的绝对路径（临时/持久存储目录）
+  web-img-path: /forum/image/  # 前端访问图片的URL路径前缀（浏览器访问时的路径）
+  tmp-upload-path: /tmp/forum/ # 图片上传过程中的临时存放路径（上传未完成时的过渡目录）
+  cdn-host:                    # CDN域名（为空表示暂不使用CDN加速）
+  oss:                         # 对象存储服务（OSS）配置（如阿里云OSS、AWS S3等）
+    type:
+    prefix:
+    endpoint:
+    bucket:
+    host:
+
+spring:
+  web:
+    resources:
+      # 支持本地图片上传之后的链接，其中 file:///d的用于win系统，后面的file: 适用于mac/linux系统
+      static-locations:
+        - classpath:/static/                 # 项目内置静态资源目录（如src/main/resources/static）
+        - file:///d:${image.abs-tmp-path}    # Windows系统下的本地图片存储路径（d盘）
+        - file:${image.abs-tmp-path}         # Linux/macOS系统下的本地图片存储路径
