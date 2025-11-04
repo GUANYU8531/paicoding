@@ -23,6 +23,7 @@ import java.util.Map;
 
 /**
  * 公众号登陆的长连接控制器
+ * 实现二维码登录
  *
  * @author louzai
  * @date : 2022/8/3 10:56
