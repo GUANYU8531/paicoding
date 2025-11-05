@@ -7,7 +7,7 @@ spring:
     username: root
     password: 123456
   dynamic: # 动态数据源
-    primary: master # 这个表示默认的数据源，如果是注释状态，则表明使用上面的单数据源模式
+#    primary: master # 这个表示默认的数据源，如果是注释状态，则表明使用上面的单数据源模式
     datasource:
       master:
         # 数据库名，从配置 database.name 中获取
@@ -43,7 +43,7 @@ spring:
 # elasticsearch配置
 elasticsearch:
   # 是否开启ES？本地启动如果没有安装ES，可以设置为false关闭ES
-  open: false
+  open: true
   # es集群名称
   clusterName: elasticsearch
   # es节点地址
