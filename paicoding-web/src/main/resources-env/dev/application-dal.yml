@@ -51,12 +51,20 @@ elasticsearch:
 #  hosts: 120.55.245.172:9200
   # es请求方式
   scheme: http
+  # es用户名（如果ES启用了安全认证，必须填写；否则留空或删除）
+  userName: elastic
+  # es密码（如果ES启用了安全认证，必须填写；否则留空或删除）
+  password: your-es-password
   # es连接超时时间（毫秒）
   connectTimeOut: 1000
   # es socket连接超时时间（毫秒）
   socketTimeOut: 30000
-
-
+  # es请求等待超时时间（毫秒，从连接池获取连接的等待时间）
+#  connectionRequestTimeOut: 500
+#  # es最大连接数（整个连接池的最大连接数）
+#  maxConnectNum: 100
+#  # es每个路由的最大连接数（每个ES节点的最大连接数）
+#  maxConnectNumPerRoute: 10
 
 
 #
