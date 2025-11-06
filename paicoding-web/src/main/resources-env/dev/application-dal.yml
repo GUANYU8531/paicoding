@@ -1,7 +1,7 @@
 spring:
   datasource: #单数据源
     # url: jdbc:mysql://localhost:3306/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    url: jdbc:mysql://47.118.25.143:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://47.118.25.143:3306/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
 #    url: jdbc:mysql://120.55.245.172:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     # fixme 注意：本地启动时，数据库用户名 + 密码，更新这里的配置
     username: root
@@ -12,7 +12,7 @@ spring:
       master:
         # 数据库名，从配置 database.name 中获取
 #        url: jdbc:mysql://localhost:3306/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-        url: jdbc:mysql://47.118.25.143:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        url: jdbc:mysql://47.118.25.143:3306/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
 #        url: jdbc:mysql://120.55.245.172:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
         username: root
         password: 123456
@@ -30,7 +30,7 @@ spring:
         validationQuery: select 1
       slave:
         # 数据库名，从配置 database.name 中获取
-        url: jdbc:mysql://47.118.25.143:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        url: jdbc:mysql://47.118.25.143:3306/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
 #        url: jdbc:mysql://120.55.245.172:3307/${database.name}?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
         username: readonly
         password:
@@ -43,7 +43,7 @@ spring:
 # elasticsearch配置
 elasticsearch:
   # 是否开启ES？本地启动如果没有安装ES，可以设置为false关闭ES, 需提前测试好
-  open: true
+  open: false
   # es集群名称
   clusterName: elasticsearch
   # es节点地址
@@ -54,7 +54,7 @@ elasticsearch:
   # es用户名（如果ES启用了安全认证，必须填写；否则留空或删除）
   userName: elastic
   # es密码（如果ES启用了安全认证，必须填写；否则留空或删除）
-  password: your-es-password
+  password: qloEb-qq+zZLqk+BPYg7
   # es连接超时时间（毫秒）
   connectTimeOut: 1000
   # es socket连接超时时间（毫秒）
